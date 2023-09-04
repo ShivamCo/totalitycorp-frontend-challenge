@@ -1,11 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-
+import dotenv from "dotenv"
 
 // import sdf from "../../../server/uploads"
 
 export const Products = () => {
+
+    dotenv.config();
+
+    const BASE_URL = process.env.BASE_URL
+
+
     const [productList, setProductList] = useState()
     const [loggedIn, setLoggedIn] = useState()
     const [productValue, setProductValue] = useState()

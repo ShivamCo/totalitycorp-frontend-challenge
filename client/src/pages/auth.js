@@ -3,8 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from "axios";
 import { useCookies } from 'react-cookie'
 import { useNavigate } from "react-router-dom"
+import dotenv from "dotenv"
 
 export const Auth = () => {
+
+    dotenv.config();
+
+    const BASE_URL = process.env.BASE_URL
+
+
     return (
 
         <div className="grid grid-row-2 place-content-center">

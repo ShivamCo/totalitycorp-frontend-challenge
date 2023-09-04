@@ -4,10 +4,15 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { Route } from "react-router-dom";
-
+import dotenv from "dotenv"
 
 
 export const Checkout = () => {
+
+    dotenv.config();
+
+    const BASE_URL = process.env.BASE_URL
+
 
     const [cartList, setCartList] = useState();
     const [loggedIn, setLoggedIn] = useState()

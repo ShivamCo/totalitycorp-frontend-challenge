@@ -1,55 +1,64 @@
 import { useState } from "react";
 import axios from "axios";
+import dotenv from "dotenv"
+
+
+
 
 export const AddProducts = () => {
-    
+
+    dotenv.config();
+
+    const BASE_URL = process.env.BASE_URL
+
+
     const [inputData, setInputData] = useState({
         title: "",
         price: 0,
         category: "",
         rating: 0,
         productImage: ""
-        
+
 
     })
 
-    
+
 
     const inputHandler = (event) => {
-        setInputData({...inputData, [event.target.name]: event.target.value})
+        setInputData({ ...inputData, [event.target.name]: event.target.value })
 
     }
 
     const onImageChange = (event) => {
-         
-        setInputData({...inputData, productImage:event.target.files[0]})
-    } 
+
+        setInputData({ ...inputData, productImage: event.target.files[0] })
+    }
 
 
     const onClickHandler = (event) => {
 
         event.preventDefault()
-        
+
         const formData = new FormData();
-        
+
         formData.append("productImage", inputData.productImage, inputData.productImage.name);
         formData.append("title", inputData.title);
         formData.append("price", inputData.price);
-        formData.append( "category", inputData.category);
-        formData.append ("rating", inputData.rating);
-        
-       
+        formData.append("category", inputData.category);
+        formData.append("rating", inputData.rating);
+
+
 
         try {
-            axios.post(`${BASE_URL}/addProduct`, 
-        
-        formData )
+            axios.post(`${BASE_URL}/addProduct`,
+
+                formData)
             alert("Product Upload Success!")
         } catch (error) {
             console.log(error)
         }
 
-         
+
     }
 
 
@@ -97,7 +106,7 @@ export const AddProducts = () => {
                     placeholder="Rating"></input>
 
                 <input
-                    
+
                     className="block w-full text-sm text-slate-500
                         file:mr-4 file:py-2 file:px-4
                         file:rounded-full file:border-0
@@ -105,7 +114,7 @@ export const AddProducts = () => {
                         file:bg-blue-50 file:text-blue-700
                         hover:file:bg-blue-100"
                     type="file"
-                    
+
                     name="productImage"
                     onChange={onImageChange}
                 ></input>
