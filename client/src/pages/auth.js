@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from "axios";
 import { useCookies } from 'react-cookie'
 import { useNavigate } from "react-router-dom"
-import dotenv from "dotenv"
+
+
+
 
 export const Auth = () => {
 
-    dotenv.config();
-
-    const BASE_URL = process.env.BASE_URL
+   
 
 
     return (
@@ -35,6 +35,7 @@ export const Auth = () => {
 
 const Login = () => {
 
+    
 
     const [inputs, setInput] = useState({
         'username': "",
@@ -60,7 +61,7 @@ const Login = () => {
     const submitHandler = async(event) => {
         event.preventDefault()
         try {
-            const result = await axios.post(`${BASE_URL}/auth/login`, {
+            const result = await axios.post(`https://ecom-nwkh.onrender.com/auth/login`, {
                 username: inputs.username,
                 password: inputs.password
             })
@@ -150,7 +151,7 @@ const Register = () => {
     const submitHandler = async (event) => {
         event.preventDefault()
         try {
-            await axios.post("http://localhost:5000/auth/register", {
+            await axios.post("https://ecom-nwkh.onrender.com/auth/register", {
                 username: inputs.username,
                 password: inputs.password
             })

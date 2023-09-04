@@ -4,14 +4,13 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { Route } from "react-router-dom";
-import dotenv from "dotenv"
 
 
 export const Checkout = () => {
 
-    dotenv.config();
+    
 
-    const BASE_URL = process.env.BASE_URL
+    
 
 
     const [cartList, setCartList] = useState();
@@ -31,12 +30,12 @@ export const Checkout = () => {
     
 
         if (!localStorage.getItem("userID")) {
-            window.location.replace("/auth");
+            navigate("/auth");
                       
 
         } else {
             try {
-                await axios.post(`${BASE_URL}/removeRouter/${localStorage.userID}/${event.target.value}`)
+                await axios.post(`https://ecom-nwkh.onrender.com/removeRouter/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -59,7 +58,7 @@ export const Checkout = () => {
     
         } else {
             try {
-                axios.get(`${BASE_URL}/userDetail/${localStorage.userID}`).then((response) => {
+                axios.get(`https://ecom-nwkh.onrender.com/userDetail/${localStorage.userID}`).then((response) => {
                     setCartList(response.data)
                     
                     loggIn = true

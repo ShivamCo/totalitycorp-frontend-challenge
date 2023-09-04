@@ -1,15 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
-import dotenv from "dotenv"
+
 
 
 
 
 export const AddProducts = () => {
 
-    dotenv.config();
+    
 
-    const BASE_URL = process.env.BASE_URL
+    
 
 
     const [inputData, setInputData] = useState({
@@ -50,7 +50,7 @@ export const AddProducts = () => {
 
 
         try {
-            axios.post(`${BASE_URL}/addProduct`,
+            axios.post(`https://ecom-nwkh.onrender.com/addProduct`,
 
                 formData)
             alert("Product Upload Success!")

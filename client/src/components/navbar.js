@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import logo from "../../src/logo.png"
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import dotenv from "dotenv"
+
 
 export const Navbar = () => {
 
-  dotenv.config();
+  
 
-    const BASE_URL = process.env.BASE_URL
+    
 
   const [ cookies, setCookies] = useCookies(["access_token"])
 

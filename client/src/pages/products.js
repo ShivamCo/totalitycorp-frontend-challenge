@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import dotenv from "dotenv"
+
 
 // import sdf from "../../../server/uploads"
 
 export const Products = () => {
 
-    dotenv.config();
+    
 
-    const BASE_URL = process.env.BASE_URL
+ 
 
 
     const [productList, setProductList] = useState()
@@ -44,7 +44,7 @@ export const Products = () => {
 
         } else {
             try {
-                await axios.put(`/${localStorage.userID}/${event.target.value}`)
+                await axios.put(`https://ecom-nwkh.onrender.com/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -59,7 +59,7 @@ export const Products = () => {
         try {
             console.log(filterData)
 
-            axios.get(`${BASE_URL}/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
+            axios.get(`https://ecom-nwkh.onrender.com/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
                 setProductList(response.data.products)
 
             })
@@ -120,7 +120,9 @@ export const Products = () => {
                             className="  w-full max-w-sm bg-slate-800 bg-opacity-50 border border-gray-200 rounded-lg shadow">
 
                             <img className=" rounded-lg p-1 "
-                                src={require(`./images/${i.productImage}`)} />
+                                src={require(`./images/${i.productImage}`)} 
+                                    
+                                />
                             <div className="px-4 pb-4">
                                 <h2 className=" text-xl font-semibold tracking-tight text-white " >{i.title}</h2>
                                 <h5 className=" text-yellow-200 font-bold text-2xl">₹ {i.price}</h5>
