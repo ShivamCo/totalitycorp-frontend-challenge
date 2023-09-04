@@ -26,7 +26,7 @@ export const Checkout = () => {
     
 
         if (!localStorage.getItem("userID")) {
-            window.location.replace('/auth');
+            navigate("/auth")
                       
 
         } else {
