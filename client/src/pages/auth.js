@@ -62,7 +62,7 @@ const Login = () => {
             console.log(result)
              setCookies("access_token", result.data.token);
              window.localStorage.setItem("userID", result.data.userID);
-            navigate("/")
+            navigate("https://main--celebrated-conkies-90de72.netlify.app/")
 
         } 
         catch (error) {

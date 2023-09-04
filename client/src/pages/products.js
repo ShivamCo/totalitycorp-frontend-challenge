@@ -33,7 +33,7 @@ export const Products = () => {
         
 
         if (!localStorage.getItem("userID")) {
-            navigate("/auth")
+            navigate("https://main--celebrated-conkies-90de72.netlify.app/auth")
 
         } else {
             try {
