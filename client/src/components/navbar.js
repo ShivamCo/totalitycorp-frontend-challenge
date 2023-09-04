@@ -5,12 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Navbar = () => {
-
-  
-
-    
-
-  const [ cookies, setCookies] = useCookies(["access_token"])
+const [ cookies, setCookies] = useCookies(["access_token"])
 
   const navigate = useNavigate()
 
@@ -48,7 +43,7 @@ export const Navbar = () => {
         className="grid grid-flow-col gap-1 border-2 p-1 pr-2 pl-2 mr-1 rounded-lg"
         value="addProduct" 
         onClick={(e)=>{if(e.target.value == "addProduct") {
-          window.location.replace('/add-products')
+          navigate('/add-products')
         }}}>Add Products</button>
         <div className="grid grid-flow-col gap-1 border-2 p-1 pr-2 pl-2 rounded-lg" >
         <img className="w-7 h-7 fill-current rounded-full"  src="https://www.w3.org/thumbnails/200/avatar-images/7mtpjeh4in8kw04ksso8ss4ocsksswo.webp"></img>

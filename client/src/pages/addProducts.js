@@ -1,18 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
-
-
-
-
 export const AddProducts = () => {
 
-    
-
-    
-
-
-    const [inputData, setInputData] = useState({
+const [inputData, setInputData] = useState({
         title: "",
         price: 0,
         category: "",
