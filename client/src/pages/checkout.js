@@ -27,6 +27,7 @@ export const Checkout = () => {
 
         if (!localStorage.getItem("userID")) {
             navigate("https://main--celebrated-conkies-90de72.netlify.app/auth")
+                      
 
         } else {
             try {
