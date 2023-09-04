@@ -41,7 +41,7 @@ export const AddProducts = () => {
        
 
         try {
-            axios.post("http://localhost:5000/addProduct", 
+            axios.post("https://ecom-nwkh.onrender.com/addProduct", 
         
         formData )
             alert("Product Upload Success!")

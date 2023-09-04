@@ -44,7 +44,7 @@ export const Navbar = () => {
         className="grid grid-flow-col gap-1 border-2 p-1 pr-2 pl-2 mr-1 rounded-lg"
         value="addProduct" 
         onClick={(e)=>{if(e.target.value == "addProduct") {
-          window.location.replace('http://localhost:3000/add-products')
+          window.location.replace('https://ecom-nwkh.onrender.com/add-products')
         }}}>Add Products</button>
         <div className="grid grid-flow-col gap-1 border-2 p-1 pr-2 pl-2 rounded-lg" >
         <img className="w-7 h-7 fill-current rounded-full"  src="https://www.w3.org/thumbnails/200/avatar-images/7mtpjeh4in8kw04ksso8ss4ocsksswo.webp"></img>

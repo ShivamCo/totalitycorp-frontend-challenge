@@ -37,7 +37,7 @@ export const Products = () => {
 
         } else {
             try {
-                await axios.put(`http://localhost:5000/updateCart/${localStorage.userID}/${event.target.value}`)
+                await axios.put(`https://ecom-nwkh.onrender.com/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -52,7 +52,7 @@ export const Products = () => {
         try {
             console.log(filterData)
 
-            axios.get(`http://localhost:5000/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
+            axios.get(`https://ecom-nwkh.onrender.com/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
                 setProductList(response.data.products)
 
             })
