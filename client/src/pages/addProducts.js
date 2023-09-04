@@ -41,7 +41,7 @@ export const AddProducts = () => {
        
 
         try {
-            axios.post("/addProduct", 
+            axios.post(`${BASE_URL}/addProduct`, 
         
         formData )
             alert("Product Upload Success!")

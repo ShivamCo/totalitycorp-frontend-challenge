@@ -26,12 +26,12 @@ export const Checkout = () => {
     
 
         if (!localStorage.getItem("userID")) {
-            window.location.replace("https://main--celebrated-conkies-90de72.netlify.app/auth");
+            window.location.replace("/auth");
                       
 
         } else {
             try {
-                await axios.post(`/removeRouter/${localStorage.userID}/${event.target.value}`)
+                await axios.post(`${BASE_URL}/removeRouter/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -54,7 +54,7 @@ export const Checkout = () => {
     
         } else {
             try {
-                axios.get(`/userDetail/${localStorage.userID}`).then((response) => {
+                axios.get(`${BASE_URL}/userDetail/${localStorage.userID}`).then((response) => {
                     setCartList(response.data)
                     
                     loggIn = true

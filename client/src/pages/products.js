@@ -33,7 +33,7 @@ export const Products = () => {
         
 
         if (!localStorage.getItem("userID")) {
-            window.location.replace('https://main--celebrated-conkies-90de72.netlify.app/auth');
+            window.location.replace('/auth');
             
 
         } else {
@@ -53,7 +53,7 @@ export const Products = () => {
         try {
             console.log(filterData)
 
-            axios.get(`https://ecom-nwkh.onrender.com/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
+            axios.get(`${BASE_URL}/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
                 setProductList(response.data.products)
 
             })
