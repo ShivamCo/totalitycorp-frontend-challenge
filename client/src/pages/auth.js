@@ -53,7 +53,7 @@ const Login = () => {
     const submitHandler = async(event) => {
         event.preventDefault()
         try {
-            const result = await axios.post("https://ecom-nwkh.onrender.com/auth/login", {
+            const result = await axios.post("/auth/login", {
                 username: inputs.username,
                 password: inputs.password
             })

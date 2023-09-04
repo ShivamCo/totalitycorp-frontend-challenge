@@ -31,7 +31,7 @@ export const Checkout = () => {
 
         } else {
             try {
-                await axios.post(`https://ecom-nwkh.onrender.com/removeRouter/${localStorage.userID}/${event.target.value}`)
+                await axios.post(`/removeRouter/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -49,12 +49,12 @@ export const Checkout = () => {
     const navigate = useNavigate()
     useEffect(()=> {
         if (!localStorage.getItem("userID")) {
-            window.location.replace('/auth')
+            navigate('/auth')
     
     
         } else {
             try {
-                axios.get(`https://ecom-nwkh.onrender.com/userDetail/${localStorage.userID}`).then((response) => {
+                axios.get(`/userDetail/${localStorage.userID}`).then((response) => {
                     setCartList(response.data)
                     
                     loggIn = true

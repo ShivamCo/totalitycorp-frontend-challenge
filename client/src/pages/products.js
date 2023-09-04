@@ -38,7 +38,7 @@ export const Products = () => {
 
         } else {
             try {
-                await axios.put(`https://ecom-nwkh.onrender.com/${localStorage.userID}/${event.target.value}`)
+                await axios.put(`/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
