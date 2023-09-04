@@ -120,7 +120,7 @@ export const Products = () => {
                             className="  w-full max-w-sm bg-slate-800 bg-opacity-50 border border-gray-200 rounded-lg shadow">
 
                             <img className=" rounded-lg p-1 "
-                                src={ !require(`./images/${i.productImage}`) ? "https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/image-line-icon.png" : require(`./images/${i.productImage}`) } 
+                                src={ require(`./images/${i.productImage}`) } 
                                     
                                 />
                             <div className="px-4 pb-4">
