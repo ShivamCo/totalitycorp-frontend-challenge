@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../client/src/pages/images");
+    cb(null, "https://main--tfccommerce.netlify.app/static/media");
   },
 
   filename: (req, file, cb) => {
