@@ -61,7 +61,7 @@ const Login = () => {
     const submitHandler = async(event) => {
         event.preventDefault()
         try {
-            const result = await axios.post(`https://ecom-nwkh.onrender.com/auth/login`, {
+            const result = await axios.post(`https://ecommerce-386c.onrender.com/auth/login`, {
                 username: inputs.username,
                 password: inputs.password
             })
@@ -151,7 +151,7 @@ const Register = () => {
     const submitHandler = async (event) => {
         event.preventDefault()
         try {   
-            await axios.post("https://ecom-nwkh.onrender.com/auth/register", {
+            await axios.post("https://ecommerce-386c.onrender.com/auth/register", {
                 username: inputs.username,
                 password: inputs.password
             })

@@ -2,9 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-
-// import sdf from "../../../server/uploads"
-
 export const Products = () => {
 
     
@@ -44,7 +41,7 @@ export const Products = () => {
 
         } else {
             try {
-                await axios.put(`https://ecom-nwkh.onrender.com/${localStorage.userID}/${event.target.value}`)
+                await axios.put(`https://ecommerce-386c.onrender.com/${localStorage.userID}/${event.target.value}`)
             } catch (error) {
                 console.log(error)
             }
@@ -59,11 +56,11 @@ export const Products = () => {
         try {
             console.log(filterData)
 
-            axios.get(`https://ecom-nwkh.onrender.com/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
+            axios.get(`https://ecommerce-386c.onrender.com/allProduct/${filterData.category}/${filterData.price}`).then((response) => {
                 setProductList(response.data.products)
 
             })
-            //   console.log(productList[0])
+            
 
 
 
@@ -72,8 +69,7 @@ export const Products = () => {
         }
     }, [filterHandler]);
 
-    //    console.log(productList.products[0]._id)
-    // console.log(productList[0]._id)
+    
 
 
 

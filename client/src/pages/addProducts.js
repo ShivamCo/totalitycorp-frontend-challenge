@@ -41,7 +41,7 @@ const [inputData, setInputData] = useState({
 
 
         try {
-            axios.post(`https://ecom-nwkh.onrender.com/addProduct`,
+            axios.post(`https://ecommerce-386c.onrender.com/addProduct`,
 
                 formData)
             alert("Product Upload Success!")
