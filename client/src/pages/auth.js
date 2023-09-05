@@ -150,7 +150,7 @@ const Register = () => {
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        try {
+        try {   
             await axios.post("https://ecom-nwkh.onrender.com/auth/register", {
                 username: inputs.username,
                 password: inputs.password
